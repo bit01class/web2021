@@ -1,0 +1,1 @@
+document.write("import test01.js");

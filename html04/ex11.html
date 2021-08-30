@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">
+var a=new Object();
+var b={};
+var c=1111;
+b['key1']='val1';
+b['key2']='val2';
+b[c]='2222';
+b[3.14]='3333';
+b[true]='4444';
+
+b[3.14]='edit';
+console.log(b['key1'],b['key2'],b[1111],b[3.14],b[true]);
+console.log('--------------');
+for(var key in b){
+    console.log(key,b[key]);
+}
+console.log('--------------');
+    console.log(b[1234]);
+console.log('--------------');
+b.key3='val3';
+    console.log(b.key3);
+ for(var key in b){
+    console.log(key,b[key]);
+}
+console.log('--------------');
+    d=1234;
+console.log(d);    
+    
+</script>
+</head>
+<body>
+    <h1>Object</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

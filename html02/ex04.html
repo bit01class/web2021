@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style rel="stylesheet" type="text/css">
+       /*
+        선택자의 우선순위
+        inline > #id > .class > tag
+        */
+        #id1{
+            color: blue;
+        }
+        .cl1{
+            color: red;
+        }
+        h3{
+            color:aqua;
+        }
+        h3{
+            color:darkmagenta;
+        }
+    </style>
+</head>
+<body>
+    <h1>h1</h1>
+    <p>h1p</p>
+    <h2>h2</h2>
+    <p class="cl1">h2p</p>
+    <h3>h3-1</h3>
+    <p>h3p</p>
+    <h3 class="cl1" id="id1">h3-2</h3>
+    <p>h3p</p>
+    <h3 class="cl1" id="id2">h3-3</h3>
+    <p>h3p</p>
+    <h3>h3-4</h3>
+    <p>h3p</p>
+</body>
+</html>

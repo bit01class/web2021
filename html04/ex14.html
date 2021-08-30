@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">
+function func01(a){
+    console.log(typeof a);
+    a();
+}
+
+    var f2=function (){
+    console.log('func02 run...');
+};
+    // callback function
+    func01(f2);
+    
+    // ex
+    var f3=function(a,b){
+        return a-b;
+    }
+    var arr=[3,1,9,5,7];
+    arr.sort(f3);
+    console.log(arr.toString());
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

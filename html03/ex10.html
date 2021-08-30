@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<style rel="stylesheet" type="text/css">
+    nav{
+        background-color: aqua;
+        height: 50px;
+    }    
+    nav>ul{
+        list-style: none;
+        padding: 0px;
+        width: 408px;
+        margin: 0px auto;
+    }    
+    nav>ul>li{
+        margin: 0px 1px;
+        float: left;
+        width: 100px;
+        height: 50px;
+        background-color: gray;
+        overflow: hidden;
+    }  
+    nav>ul>li:hover{
+        height: 150px;
+        transition-duration: 1s;
+        transition-timing-function: ease-out;
+    }
+    nav>ul>li>ol{
+        list-style: none;
+        padding: 0px;
+        position: relative;
+        top: 29px;
+    }    
+    nav>ul>li>ol>li{
+        width: 100px;
+        height: 50px;
+        background-color: darkgray;
+    }    
+    
+</style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li>menu1
+            <ol>
+                <li>menu1-1</li>
+                <li>menu1-2</li>
+            </ol>
+        </li>
+        <li>menu2
+            <ol>
+                <li>menu2-1</li>
+                <li>menu2-2</li>
+            </ol>
+        </li>
+        <li>menu3
+            <ol>
+                <li>menu3-1</li>
+                <li>menu3-2</li>
+            </ol></li>
+        <li>menu4</li>
+    </ul>
+</nav>
+</body>
+</html>

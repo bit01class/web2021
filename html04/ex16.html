@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">
+    var key3=3333;
+    console.log(window.key2);
+var obj=new Object();
+    obj.key1=1111;
+    obj.key2=3.14;
+    obj.key3='name';
+    obj.key4=function(a){
+//        console.log(this.key3,this==obj,this==window);
+        this.key5=a;
+    };
+    obj.key6=function(){return this.key5};
+    
+    
+    obj.key4(12341);
+//    console.log(this==obj,window==this);
+    console.log(obj.key6());
+</script>
+</head>
+<body>
+
+</body>
+</html>

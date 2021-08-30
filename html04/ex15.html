@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">
+var arr2=['aaa','bbb','ccc','dddd'];
+    arr2.forEach(function(val){
+        console.log(val);
+    });
+    
+var arr=new Array();
+    arr.push(1111);
+    arr.push(2222);
+    arr.push(function(){console.log('run');});
+ 
+    console.log(arr[0]);
+    console.log(arr[1]);
+    arr[2]();
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+
+<style rel="stylesheet" type="text/css">
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+    }
+    div>div{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<script type="text/javascript">
+function mouse1(e){
+    console.log('위로',e);
+}
+function mouse2(e){
+    console.log('밖으로');
+}
+var div;
+    window.onload=function(){
+        div=document.querySelector('body>div');
+        div.onmouseover=mouse1;
+        div.onmouseout=mouse2;
+//        div.onmouseenter=mouse1;
+//        div.onmouseleave=mouse2;
+    };
+    
+    
+</script>
+</head>
+<body>
+    <div>
+        <div></div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

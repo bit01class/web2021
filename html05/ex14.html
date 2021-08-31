@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+</head>
+<body>
+    <div></div>
+    
+<script type="text/javascript">
+var target=document.querySelector('div');
+    var num=0;
+    function nextImg(){
+        if(num==6)num=0;
+        num++;
+        target.innerHTML='<img src="imgs/sm0'+num+'.jpg" />';
+    }
+    setInterval(nextImg,1000);
+</script>    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+</head>
+<body>
+    <div>
+        <img src="imgs/sm01.jpg"/>
+        <img src="imgs/sm02.jpg"/>
+        <img src="imgs/sm03.jpg"/>
+        <img src="imgs/sm04.jpg"/>
+        <img src="imgs/sm05.jpg"/>
+        <img src="imgs/sm06.jpg"/>
+    </div>
+<script type="text/javascript">
+var div=document.querySelector('div');
+var imgs=document.querySelectorAll('div>img');
+var num=0;
+function nextImg(){
+    div.innerHTML=imgs[num++].outerHTML;
+    if(num==imgs.length)num=0;
+}
+setInterval(nextImg,1000);
+    
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

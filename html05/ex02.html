@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">
+//var su=0;
+//function func01(){
+//    console.log(new Date());
+//}    
+//
+//var out=window.setInterval(func01,1000);
+//    
+//window.setTimeout(function(){window.clearInterval(out);},3000);
+//console.log("실행");
+    
+var out2;
+var func2=function(){
+    console.log("실행");
+    out2=setTimeout(func2,1000);
+};
+out2=setTimeout(func2,1000);
+    setTimeout(function(){clearTimeout(out2);},3000);
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

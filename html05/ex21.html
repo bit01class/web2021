@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">
+    var a,form,input1;
+    window.onload=function(){
+        a=document.querySelector('a');
+        form=document.querySelector('form');
+        input1=form.querySelectorAll('input')[0];
+input1.onfocus=function(){
+    console.log('focus');
+    
+};
+input1.onblur=function(){
+    console.log('blur',input1.value.length);
+    
+};
+        a.onclick=function(){
+            alert('링크');
+            return false;
+        };
+form.onsubmit=function(){
+    console.log(form.id.value
+                ,document.querySelector('#id01').value);
+    return false;
+};
+    };
+</script>
+</head>
+<body>
+   <a href="ex01.html">link</a>
+    <form action="ex01.html">
+        <input type="text" name="id" id='id01' value="abcd"/>
+        <input type="text" name="pw" id='pw01'/>
+        <select name="sel">
+            <option>item1</option>
+            <option>item2</option>
+            <option>item3</option>
+            <option>item4</option>
+        </select>
+        <textarea name="content"></textarea>
+        <button type="submit">전송</button>
+        <button type="reset">취소</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">
+var input;
+    window.onload=function(){
+        input=document.querySelector('input');
+        input.onkeydown=function(e){
+            console.log('down',e.key,e.keyCode);
+        };
+        input.onkeypress=function(e){
+            console.log('press',e.key,e.keyCode);
+        };
+        input.onkeyup=function(e){
+            console.log('up',e.key,e.keyCode);
+        };
+    };
+    
+</script>
+</head>
+<body>
+    <h1>key event</h1>
+    <input type="text"/>
+</body>
+</html>

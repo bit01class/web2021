@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+
+</head>
+<body>
+
+    <h1>select element</h1>
+    <p>tag, class, id를 이용하여 선택합니다</p>
+    <p id="id01">아이디로 선택</p>
+    <p class="cl01">클래스로 선택1</p>
+    <p class="cl01">클래스로 선택2</p>
+    <p class="cl01 cl02">클래스로 선택3</p>
+    <p class="cl02">클래스로 선택4</p>
+
+<script type="text/javascript">
+    var arr1=document.getElementsByTagName('h1');
+    var arr2=document.getElementsByClassName('cl01');
+    var ele1=document.getElementById('id01');
+    
+    var ele2=document.querySelector('#id01');
+    var eles=document.querySelectorAll('p');
+</script>
+</body>
+</html>

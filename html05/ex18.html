@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">
+var btn,h1;
+    window.onload=function(){
+        btn=document.querySelector('button');
+        h1=document.querySelector('h1');
+        h1.onclick=function(e){
+            console.log('클릭',e.x,e.y);
+        };
+        btn.onmousedown=function(){
+            console.log('down');
+        };
+        btn.onmouseup=function(){
+            console.log('up');
+        };
+        btn.ondblclick=function(){
+            console.log("dblclick");
+        };
+        
+    };
+    
+</script>
+</head>
+<body>
+    <h1>mouse event</h1>
+    <button>btn</button>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">   
+window.onload=function(){
+    console.log('load',document.querySelector('h1').innerHTML);
+};
+window.onbeforeunload=function(){
+    console.log('before',document.querySelector('h1').innerHTML);
+};
+window.onresize=function(){
+    console.log('창크기수정');
+};
+</script>
+</head>
+<body>
+    <h1>DOM level2</h1>
+</body>
+</html>

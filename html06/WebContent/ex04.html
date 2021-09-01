@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">
+var form,id,pw,sel;
+window.onload=function(){
+    form=document.querySelector('form');
+    form.addEventListener('submit',function(e){
+        e.preventDefault();
+        console.log(form.action);
+    });
+    id=document.querySelector('#id');
+    id.value="아이디를 입력";
+    id.addEventListener('focusin',function(){
+        id.value="";
+    });
+    id.addEventListener('focusout',function(){
+        id.style.backgroundColor="red";
+    });
+    sel=document.querySelector('select');
+    sel.addEventListener('focusin',function(){
+        //sel.removeChild(sel.firstElementChild);
+        sel.innerHTML='<option>item1</option><option>item2</option><option>item3</option><option>item4</option>';
+    });
+    sel.addEventListener('change',function(){
+        console.log(sel.value);
+    });
+};    
+    
+</script>
+</head>
+<body>
+    <form action="ex01.html">
+        <div>
+            <label for="id">id</label>
+            <input type="text" name="id" id="id"/>
+        </div>
+        <div>
+            <label for="pw">pw</label>
+            <input type="password" name="pw" id="pw"/>
+        </div>
+        <div>
+            <input type="radio" name="ra" id="ra1"/>
+            <label for="ra1">item1</label>
+            <input type="radio" name="ra" id="ra2"/>
+            <label for="ra2">item2</label>
+            <input type="radio" name="ra" id="ra3"/>
+            <label for="ra3">item3</label>
+        </div>
+        <div>
+            <select>
+                <option>선택하세요</option>
+                <option>item1</option>
+                <option>item2</option>
+                <option>item3</option>
+                <option>item4</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">submit</button>
+            <button type="reset">reset</button>
+        </div>
+    </form>
+</body>
+</html>

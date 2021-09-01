@@ -1,0 +1,68 @@
+	body>div{
+	 width: 800px;
+	 margin: 0px auto;
+	}
+	header>h1{
+		background-image: url("../imgs/logo.gif");
+		width: 180px;
+		height: 44px;
+		text-indent: -9999px;
+	}
+	nav{
+		background-color: gray;
+		height: 50px;
+	}
+	nav>ul{
+		list-style: none;
+		padding: 0px;
+		margin: 0px auto;
+		width: 400px;
+	}
+	nav>ul>li{
+		width:100px;
+		float: left;
+	}
+	nav>ul>li>a{
+		display: block;
+		height: 50px;
+		border-right: 1px solid white;
+		border-left: 1px solid white;
+		color:white;
+		text-align: center;
+		line-height: 50px;
+		text-decoration: none;
+	}
+	nav>ul>li>a:hover{
+		background-color: darkgray;
+	}
+	section{
+		float:left;
+		width:650px;
+	}
+	aside{
+		float:left;
+		width:150px;
+	}
+	aside>a{
+		display: block;
+		height: 100px;
+		background-repeat: no-repeat;
+		text-indent: -9999px;
+	}
+	aside>a:nth-child(1){
+		background-image: url("imgs/tjoeun.jpg");
+		background-size: 90%;
+		
+	}
+	aside>a:nth-child(2){
+		background-image: url("imgs/google_logo.png");
+		background-size: 100%;
+	}
+	aside>a:nth-child(3){
+		background-image: url("imgs/daum.png");
+		background-size: 100%;
+	}
+	footer{
+		clear: both;
+		background-color: darkgray;
+	}

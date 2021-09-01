@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<style rel="stylesheet" type="text/css">
+    div{
+        background-image: url(imgs/car.jfif);
+        width: 200px;
+        height: 148px;
+    }    
+</style>
+<script type="text/javascript">
+var div;
+    window.onload=function(){
+        div=document.querySelector("div");
+        div.style.position= 'absolute';
+        div.style.left='0px';
+        div.style.top='0px';
+        
+        
+//        function rimg(){
+//            var x=parseInt(div.style.marginLeft);
+//            div.style.marginLeft=x+10+"px";
+//        }
+//        setInterval(rimg,50);
+        
+        document.onkeyup=function(e){
+            //console.log(div.style.marginLeft+10);
+            var x=parseInt(div.style.left);
+            var y=parseInt(div.style.top);
+            if(e.keyCode==39){
+                div.style.left=x+10+"px";
+            }else if(e.keyCode==37){
+                div.style.left=x-10+"px";  
+            }else if(e.keyCode==40){
+                div.style.top=y+10+"px";
+            }else if(e.keyCode==38){
+                div.style.top=y-10+"px";
+            }
+        };
+    };
+</script>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

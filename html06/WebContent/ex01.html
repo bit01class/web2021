@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">
+function func01(){
+    alert("loading..."+document.querySelector('h1').innerText);
+}
+//window.onload=func01; 
+//window.onload=function (){
+//    console.log('또다른 onload...');
+//};    
+  window.addEventListener("load",func01);  
+  window.addEventListener("load",function(){
+      console.log('또 다른 이벤트...load...');
+  }); 
+  window.removeEventListener('load',func01);
+</script>
+</head>
+<body>
+    <h1>DOM Level3 event</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

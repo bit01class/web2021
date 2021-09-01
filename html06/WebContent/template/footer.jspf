@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+			</section>
+			<aside>
+				<a href="http://tjoeun.co.kr/">학원</a>
+				<a href="https://google.com">구글</a>
+				<a href="https://daum.net">다음</a>
+			</aside>
+		</div>
+		<footer>
+			<p>더조은컴퓨터아카데미</p>
+
+			<p>대표번호1588.8748</p>
+			<p>&copy; THEJOEUN ACADEMY Corp.</p>
+		</footer>
+	</div>

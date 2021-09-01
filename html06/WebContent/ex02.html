@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">
+var btn1,btn2,btn3,btn4,divout,divin,a;
+    window.onload=function(){
+        a=document.querySelector('a');
+        btn1=document.getElementsByTagName('button')[0];
+        btn2=document.getElementsByTagName('button')[1];
+        btn3=document.getElementsByTagName('button')[2];
+        btn4=document.getElementsByTagName('button')[3];
+        divout=document.querySelector('button+div');
+        divin=document.querySelector('div>div');
+        divout.style.width='200px';
+        divout.style.height='200px';
+        divout.style.backgroundColor='blue';
+        divin.style.width='100px';
+        divin.style.height='100px';
+        divin.style.backgroundColor='red';
+        divout.style.marginTop='50px';
+        
+//        btn1.addEventListener('click',func1);
+//        btn2.addEventListener('click',func1);
+//        btn2.addEventListener('click',function(){console.log('클릭');});
+//        btn3.addEventListener('click',function(){
+//            btn2.removeEventListener('click',func1);
+//            console.log('btn2 func1이벤트 제거');
+//        });
+//        btn4.addEventListener('click',function(){
+//            btn2.addEventListener('click',func1);
+//            console.log('btn2 func1이벤트 추가');
+//        });
+//        a.addEventListener('click',function(e){
+//            e.preventDefault();// ele 기본기능  취소
+//            alert('링크  클릭');
+//        });
+        btn1.addEventListener('mouseup',function(){
+            console.log('up');
+        });
+        btn1.addEventListener('mousedown',function(){
+            console.log('down');
+        });
+        btn1.addEventListener('click',function(){
+            console.log('click');
+        });
+        btn1.addEventListener('dblclick',function(){
+            console.log('dblclick');
+        });
+        btn2.addEventListener('mouseover',function(){
+            console.log('mouseover');
+        });
+        btn2.addEventListener('mouseout',function(){
+            console.log('mouseout');
+        });
+        btn3.addEventListener('mouseenter',function(){
+            console.log('mouseover');
+        });
+        btn3.addEventListener('mouseleave',function(){
+            console.log('mouseout');
+        });
+        divout.addEventListener('mouseover',function(){
+            console.log('mouseover');
+        });
+        divout.addEventListener('mouseout',function(){
+            console.log('mouseout');
+        });
+    };
+    function func1(){
+        alert('클릭');
+    }
+</script>
+</head>
+<body>
+    <h1>level3 mouse</h1>
+    <a href="ex01.html">link</a>
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+    <button>btn4</button>
+    <div>
+        <div></div>
+    </div>
+</body>
+</html>

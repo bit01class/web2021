@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript">
+var tf,ta,target;
+window.onload=function(){
+    tf=document.querySelector('input');
+    ta=document.querySelector("textarea");
+    target=document.querySelector('#target');
+    ta.addEventListener('keyup',function(e){
+        console.log('keyup',ta.value,e.key,e.keyCode);
+        
+    });
+    ta.addEventListener('keydown',function(e){
+        console.log('keydown',ta.value,e.key,e.keyCode);
+    });
+    ta.addEventListener('keypress',function(e){
+        console.log('keypress',ta.value,e.key,e.keyCode);
+    });
+    tf.addEventListener('change',function(){
+        target.innerHTML=tf.value+"<br/>"
+        ta.value=tf.value+"\n";
+    });
+};    
+    
+</script>
+</head>
+<body>
+    <h1>key event</h1>
+    <input type="text"/>
+    <textarea></textarea>
+    <div id="target"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+

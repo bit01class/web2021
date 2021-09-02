@@ -6,3 +6,6 @@ insert into  user07 values ('admin','1234');
 insert into  user07 values ('master','1234');
 insert into  user07 values ('user1','1234');
 insert into  user07 values ('user2','1234');
+
+create table emp07 as (select * from emp);
+select * from emp07;

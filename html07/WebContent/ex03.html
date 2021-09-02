@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table{
+	border-collapse: collapse;
+	width: 500px;
+}
+table tr{}
+table tr>th{}
+table tr>td{}
+table,table tr>th,table tr>td{
+	border: 1px solid gray;
+}
+</style>
+<script type="text/javascript">
+var table,xhr,xml;
+	window.onload=function(){
+		table=document.querySelector('table');
+		xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=getTable;
+		xhr.open('get','ex03.xml');
+		xhr.send();
+	};
+	function getTable(){
+		if(xhr.status==200&&xhr.readyState==4){
+			xml=xhr.responseXML;
+			console.log(xml);
+			var tbody=document.createElement('tbody');
+			var msg='';//'<tr><td>1</td><td>90</td><td>80</td><td>70</td></tr>';
+			var arr=xml.children[0].children;
+			
+			for(var i=0; i<arr.length; i++){
+				var num=arr[i].children[0].childNodes[0].nodeValue;
+				var kor=arr[i].children[1].childNodes[0].nodeValue;
+				var eng=arr[i].children[2].childNodes[0].nodeValue;
+				var math=arr[i].children[3].childNodes[0].nodeValue;
+				msg+='<tr><td>'+num+'</td><td>'+kor+'</td><td>'
+						+eng+'</td><td>'+math+'</td></tr>';
+			}
+			
+			tbody.innerHTML=msg;
+			table.appendChild(tbody);
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>학생성적관리프로그램</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>학번</th>
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+			</tr>
+		</thead>
+	</table>
+</body>
+</html>

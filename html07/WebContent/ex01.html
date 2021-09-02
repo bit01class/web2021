@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var div,btn;
+window.onload=function(){
+	div=document.querySelector("div");
+	btn=document.querySelector("button");
+	btn.onclick=func01;
+};
+	//비동기통신(ajax통신)
+function func01(){
+	var xhr=new XMLHttpRequest();
+	//console.log('이벤트발생전',xhr.readyState);
+	xhr.onreadystatechange=function(){
+		//console.log('이벤트발생',xhr.readyState,xhr.responseText);
+		if(xhr.readyState==4){
+			if(xhr.status==200){
+				var msg=xhr.responseText;
+				div.innerHTML=msg;
+			}else{
+				//div.innerText='에러';
+				alert('에러');
+			}
+		}
+	};
+	xhr.open('get',"ex03.jsp");
+	xhr.send();//통신
+}
+</script>
+</head>
+<body>
+	<h1>ex01.html</h1>
+	<button>파싱</button>
+	<div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

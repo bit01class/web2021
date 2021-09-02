@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var form;
+window.onload=function(){
+	form=document.querySelector('form');
+	form.onsubmit=login;
+};
+var xhr,id,pw;
+function login(){
+	xhr=new XMLHttpRequest();
+	id=form.querySelectorAll('input')[0].value;
+	pw=form.querySelectorAll('input')[1].value;
+	xhr.onreadystatechange=change;
+	xhr.open('get',form.action+"?id="+id+"&pw="+pw);
+	xhr.send();
+	return false;
+}
+var xml;
+function change(){
+	if(xhr.readyState==4){
+		xml=xhr.responseXML;
+		var ele=document.createElement("div");
+		ele.appendChild(xml.firstElementChild);
+		var result=ele.querySelector('success').innerHTML;
+		var user=ele.querySelector('id').innerHTML;
+		
+//		var result=xml.firstElementChild.firstElementChild
+//						.firstElementChild.childNodes[0].nodeValue;
+//		var user=xml.firstElementChild.firstElementChild
+//						.lastElementChild.childNodes[0].nodeValue;
+		if(result=='true')
+			form.outerHTML='<p>'+user+'님 로그인중...</p>';
+		else
+			alert('로그인 실패');
+	}
+}
+</script>
+</head>
+<body>
+	<div>
+		<h1>더조은 교육센터</h1>
+		<div>
+			<form action="ex04.jsp">
+				id<input type="text" name="id">
+				pw<input type="text" name="pw">
+				<button>로그인</button>
+			</form>
+		</div>
+	</div>
+	<div style="background-color:gray">
+		<a href="#">menu1</a>
+		<a href="#">menu2</a>
+		<a href="#">menu3</a>
+		<a href="#">menu4</a>
+	</div>
+</body>
+</html>

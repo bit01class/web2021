@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table{
+	border-collapse: collapse;
+	width: 500px;
+}
+table tr{}
+table tr>th{}
+table tr>td{}
+table,table tr>th,table tr>td{
+	border: 1px solid gray;
+}
+</style>
+<script type="text/javascript">
+var table,xhr,xml;
+	window.onload=function(){
+		table=document.querySelector('table');
+		xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=getTable;
+		xhr.open('get','ex03.xml');
+		xhr.send();
+	};
+	function getTable(){
+		if(xhr.status==200&&xhr.readyState==4){
+			var msg=xhr.responseText;
+			var ele=document.createElement("div");
+			ele.innerHTML=msg;
+			var lng=ele.querySelectorAll('student').length;
+			var nums=ele.querySelectorAll('num');
+			var kors=ele.querySelectorAll('kor');
+			var engs=ele.querySelectorAll('eng');
+			var maths=ele.querySelectorAll('math');
+			for(var i=0; i<lng; i++)
+				console.log(nums[i].innerText,kors[i].innerText
+							,engs[i].innerText,maths[i].innerHTML);
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>학생성적관리프로그램</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>학번</th>
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+			</tr>
+		</thead>
+	</table>
+	<iframe src="ex03.xml"></iframe>
+</body>
+</html>

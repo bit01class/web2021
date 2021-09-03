@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<style rel="stylesheet" type="text/css">
+    h2{
+        background-color: aqua;
+    }  
+    div{
+        width: 400px;
+        height: 100px;
+    }
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    
+    window.onload=function(){
+        $('h1').css('color','red');
+        $('h1').css('background-color','blue');
+        console.log($('h1').css('color'));
+        console.log($('h1').css('background-color'));
+        console.log($('h2').css('color'),$('h2').css('background-color'));
+        $('ul>li').css('color',function(idx,val){
+            var arr=['red','green','blue','yellow','gray'];
+            return arr[idx];
+        });
+        $('p').css({'color':'red','background-color':'yellow'});
+    };
+    
+</script>
+</head>
+<body>
+    <div></div>
+    <span></span>
+    <h1>h1</h1>
+    <p>h1p</p>
+    <h2>h2</h2>
+    <p>h2p</p>
+    <p><a href="#">link</a></p>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+    </ul>
+    <ol>
+        <li><a href="#">item1</a></li>
+        <li><a href="#">item2</a></li>
+        <li><a href="#">item3</a></li>
+        <li><a href="#">item4</a></li>
+        <li><a href="#">item5</a></li>
+    </ol>
+    
+</body>
+</html>

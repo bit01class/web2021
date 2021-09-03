@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style rel="stylesheet" type="text/css">
+    h4+div{
+        background-color: aqua;
+    }    
+    h4+div+div{
+        background-color: burlywood;
+    }
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+        var msg1=$('h4+div').html();// innerHTML
+        console.log(msg1);
+        var msg2=$('h4+div').text();// innerText
+        console.log(msg2);
+    
+    // innerHTML='<a href="#">link</a>';
+    //    $('h4+div').html('<a href="#">link</a>');
+    // innerText='<a href="#">link</a>';
+    //    $('h4+div').text('<a href="#">link</a>');
+        $('h4+div>ul>li').html(function(idx,old){
+            return "<a href='#'>"+old+"</a>";
+        });
+//        $('h4+div').prepend('h2');
+//        $('h4+div').html('h2'+$('h4+div').html());
+        $('h2').prependTo('li');
+};
+</script>
+<title> Title </title>
+</head>
+<body>
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <div>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+        </ul>
+    </div>
+    <div>
+        <ol>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+        </ol>
+    </div>
+</body>
+</html>

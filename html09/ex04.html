@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('button').click(function(){
+        $('p').append('click<br/>');
+    });
+//    $('button').mouseover(function(){
+//        $('p').append('over<br/>');
+//    }).mouseout(function(){
+//        $('p').append('out<br/>');
+//    });
+//    $('button').mouseenter(function(){
+//        $('p').append('over<br/>');
+//    }).mouseleave(function(){
+//        $('p').append('out<br/>');
+//    });
+    
+    $('button').mousedown(function(){
+        $('p').append('down<br/>');
+    }).mouseup(function(){
+        $('p').append('up<br/>');
+    });
+    $('div')
+        .css({'width':'100px','height':'100px','background-color':'gray'})
+        .mousemove(function(e){
+        $('p').append('x='+e.clientX+",y="+e.clientY+"<br/>");
+    });
+    $('button').hover(function(){
+        $(this).css('color','red');
+    },function(){
+        $(this).css('color','blue');
+    });
+});
+</script>
+</head>
+<body>
+<button>btn</button>
+<div></div>
+<p></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

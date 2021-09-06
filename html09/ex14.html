@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('button').eq(0).click(function(){
+//        $('div').slideUp('fast');
+        $('div').fadeOut('fast');
+//        $('div').hide({
+//            duration:3000
+//            ,easing:'linear'
+//            ,progress:function(a,b,c){
+//                if(b>=1)$('h1').text('100%');
+//                else if(b>=0.9)$('h1').text('90%');
+//                else if(b>=0.8)$('h1').text('80%');
+//                else if(b>=0.7)$('h1').text('70%');
+//                else if(b>=0.6)$('h1').text('60%');
+//                else if(b>=0.5)$('h1').text('50%');
+//                else if(b>=0.4)$('h1').text('40%');
+//                else if(b>=0.3)$('h1').text('30%');
+//                else if(b>=0.2)$('h1').text('20%');
+//                else if(b>=0.1)$('h1').text('10%');
+//            }
+//        });
+    });
+    
+    $('button').eq(1).click(function(){
+//        $('div').show('slow');
+//        $('div').slideDown('slow');
+        $('div').fadeIn('slow');
+    });
+    $('button').eq(2).click(function(){
+//        $('div').toggle();
+//        $('div').slideToggle();
+        $('div').fadeToggle();
+    });
+});    
+</script>
+</head>
+<body>
+    <h1>효과 애니메이션</h1>
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+    <div>
+        <h2>IT교육 산업 핵심 리더 더조은컴퓨터아카데미와
+대한민국 대표 온라인 고등 교육 메가스터디가 하나가 되었습니다!</h2>
+<p>
+IT교육의 선두주자 더조은컴퓨터아카데미와 대한민국 대표 온라인 고등 교육 메가스터디가 만나 이전에 없던 새로운 역사를 만들어냅니다.
+더조은컴퓨터아카데미는 다양한 컴퓨터 교육 서비스로 매년 수많은 취준생을 취업의 길로 이끌고 있으며
+메가스터디는 최고의 고등 교육 컨텐츠를 제공하여 수많은 학생의 대학 진학에 힘쓰고 있습니다.</p>
+<p>
+더조은컴퓨터아카데미는 메가스터디와 만나 탄탄한 지식과 체계를 통해 더욱 안정적이고 퀄리티 있는 교육을 제공하여
+수료생 여러분들의 취업과 자기발전을 위해 실무 중심의 커리큘럼에 집중하여 여러분들의 꿈을 이룰 수 있도록 최선을 다합니다.</p>
+<p>
+더조은컴퓨터아카데미는 웹디자인, 편집디자인, 건축, 인테리어디자인, 모바일 및 웹퍼블리셔 과정, 전산세무회계 등
+컴퓨터 분야의 전문화된 교육으로 운영하며 각 교육과정은 10년 이상의 실무경력을 가진 전문강사진으로 구성하여
+실무를 대비한 커리큘럼과 트렌드 및 미래 흐름까지 파악할 수 있는 대한민국 최고의 실무 인재 양성과정으로 인정받고 있습니다.</p>
+<p>
+    #더조은컴퓨터아카데미#취업준비#국비지원교육#실무중심교육#포트폴리오#무료교육#컴퓨터학원</p>
+    </div>
+</body>
+</html>

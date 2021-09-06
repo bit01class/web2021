@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+//    $('input')
+//        .focus(function(e){
+//            console.log(e.type,this);
+//        }).blur(function(e){
+//            console.log(e.type,this);
+//    });
+//    $('input')
+//        .focusin(function(e){
+//            console.log(e.type,this);
+//        }).focusout(function(e){
+//            console.log(e.type,this);
+//    });
+    $('input,select').change(function(e){
+        console.log(e.target.value);
+    });
+    $('form').submit(function(e){
+//        e.preventDefault();
+        console.log(this.action,$(e.target).attr('action'));
+        var param=$('form').serialize();
+        console.log(param);
+        $('textarea').focus();
+        return false;
+    });
+});    
+    
+</script>
+</head>
+<body>
+    <form action="ex01.html">
+        <div>
+            <label>id</label>
+            <input type="text" name="id"/>
+        </div>
+        <div>
+            <label>pw</label>
+            <input type="password" name="pw"/>
+        </div>
+        <div>
+            <input type="radio" name="ra" value="ra1" checked/>
+            <label>item1</label>
+            <input type="radio" name="ra" value="ra2"/>
+            <label>item2</label>
+            <input type="radio" name="ra" value="ra3"/>
+            <label>item3</label>
+        </div>
+        <div>
+            <select name="sal">
+                <option>item1</option>
+                <option>item2</option>
+                <option>item3</option>
+                <option>item4</option>
+            </select>
+        </div>
+        <div>
+            <textarea name="ta"></textarea>
+        </div>
+        <div>
+            <button>submit</button>
+            <button type="reset">reset</button>
+        </div>
+    </form>
+    <input />
+</body>
+</html>

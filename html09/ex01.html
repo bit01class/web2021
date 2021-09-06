@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    window.onload=function(){
+        console.log('javascript load');
+    };
+    $(window).load(function(){
+        console.log('jquery load');
+    });
+    $(document).ready(function(){
+        console.log('jquery ready');
+        $('img').load(function(){
+                      alert('이미지로딩완료');
+                      });
+    });
+</script>
+</head>
+<body>
+    <h1>h1</h1>
+    <img src="imgs/big01.jfif"/>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

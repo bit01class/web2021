@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('input')
+            .keydown(function(e){
+                console.log(e.type,e.key,e.keyCode,this.value);
+            })
+            .keyup(function(e){
+                console.log(e.type,e.key,e.keyCode,this.value);
+                $('div').text(this.value);
+            })
+            .keypress(function(e){
+                console.log(e.type,e.key,e.keyCode,this.value);
+        });
+    });
+    
+</script>
+</head>
+<body>
+    <h1>key event</h1>
+    <input type="text"/>
+    <div></div>
+</body>
+</html>

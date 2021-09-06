@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('div').css({'overflow': 'hidden',
+        'width': '300px',
+        'height': '100px',
+        'margin': '0px auto'});
+    $('ul').css({'list-style':'none','padding':'0px'});
+    $('li').css({'float': 'left'});
+    $('img').css({'width': '100px'});
+    
+    setInterval(function(){
+        $('ul').children().first().appendTo('ul');
+    },1000);
+});    
+</script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><img src="imgs/sm01.jpg"/></li>
+            <li><img src="imgs/sm02.jpg"/></li>
+            <li><img src="imgs/sm03.jpg"/></li>
+            <li><img src="imgs/sm04.jpg"/></li>
+            <li><img src="imgs/sm05.jpg"/></li>
+            <li><img src="imgs/sm06.jpg"/></li>
+        </ul>
+    </div>
+</body>
+</html>

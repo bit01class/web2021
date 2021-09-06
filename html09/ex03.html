@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<style rel="stylesheet" type="text/css">
+    div{
+        width: 200px;
+        height: 100px;
+        background-color: aqua;
+    }
+    div>div{
+        width: 100px;
+        height: 100px;
+        background-color: chocolate;
+    }
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('button').click(function(e){
+            console.log(e,e.target==this,this);
+        });
+        $('a').click(function(e){
+//            e.preventDefault();
+            console.log(this.href);
+            return false;
+        });
+        $('div').click(function(e){
+            e.stopPropagation();
+            console.log('click',this);
+        });
+    });
+</script>
+</head>
+<body>
+<h1>마우스 이벤트</h1>
+<button>btn1</button>
+<button>btn2</button>
+<button>btn3</button>
+<a href="#">link</a>
+<div>box1
+    <div>box2</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<style rel="stylesheet" type="text/css">
+    #target{}    
+    #target>ul{
+        list-style: none;
+        padding: 0px;
+    }    
+    #target>ul>li{
+        float: left;
+    }    
+    #target>ul>li>img{
+        width: 100px;
+    }    
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    var callbck=function(){
+//        $('ul')
+//            .animate({'margin-left':'-500px'},6000,function(){
+//        $('ul').animate({'margin-left':'0px'});
+        $('ul')
+            .animate({'margin-left':'-=100'},1000)
+            .delay(1000)
+            .animate({'margin-left':'-=100'},1000)
+            .delay(1000)
+            .animate({'margin-left':'-=100'},1000)
+            .delay(1000)
+            .animate({'margin-left':'-=100'},1000)
+            .delay(1000)
+            .animate({'margin-left':'-=100'},1000)
+            .delay(1000)
+            .animate({'margin-left':0},1000);
+    };
+    
+    setInterval(callbck,12000);
+});    
+</script>
+</head>
+<body>
+<div id="target">
+    <ul>
+        <li><img src="imgs/sm01.jpg"/></li>
+        <li><img src="imgs/sm02.jpg"/></li>
+        <li><img src="imgs/sm03.jpg"/></li>
+        <li><img src="imgs/sm04.jpg"/></li>
+        <li><img src="imgs/sm05.jpg"/></li>
+        <li><img src="imgs/sm06.jpg"/></li>
+    </ul>
+</div>
+</body>
+</html>

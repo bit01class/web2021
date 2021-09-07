@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<style rel="stylesheet" type="text/css">
+    #target{
+        width: 300px;
+        height: 100px;
+        overflow: hidden;
+    }
+    #target>ul{
+        list-style: none;
+        padding: 0px;
+        margin-left: -100px;
+        width: 2100px;
+    }
+    #target>ul>li{
+        float: left;
+    }
+    #target>ul>li>img{
+        width: 100px;
+    }
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    var ele1=$('<li/>')
+        .css('width','100px')
+        .css('height','100px')
+        .css('float','left')
+        .prependTo('ul');
+    
+    var callback=function(){
+        ele1.hide(1000,function(){
+            $(this).next().appendTo('ul');
+            $(this).show();
+        });
+    };
+    
+    callback();
+    setInterval(callback,3000);
+
+});    
+</script>
+</head>
+<body>
+<div id="target">
+    <ul>
+        <li><img src="imgs/sm01.jpg"/></li>
+        <li><img src="imgs/sm02.jpg"/></li>
+        <li><img src="imgs/sm03.jpg"/></li>
+        <li><img src="imgs/sm04.jpg"/></li>
+        <li><img src="imgs/sm05.jpg"/></li>
+        <li><img src="imgs/sm06.jpg"/></li>
+    </ul>
+</div>
+</body>
+</html>

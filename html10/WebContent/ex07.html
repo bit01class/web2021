@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<style rel="stylesheet" type="text/css">
+    .big{
+        width: 300px;
+        display: inline-block;
+    }
+    .bx-controls{
+        position: absolute;
+        top: 0px;
+    }
+    .bx-wrapper{
+        display: inline-block;
+    }
+    .mybx img{
+        width: 100px;
+    }    
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.mybx').bxSlider({
+        mode:'vertical',
+        pager:false,
+        slideWidth:100,
+        minSlides:3,
+        maxSlides:3,
+        moveSlides:1,
+        auto:true,
+        onSliderLoad:function(idx){$('.big').html($('.mybx').find('img').eq(idx+3).parent().html());  
+        },
+        onSlideAfter:function(a,b,c){
+            $('.big').html(a.html());
+        }
+    });
+});    
+</script>
+</head>
+<body>
+<div>
+    <div class="big"></div>
+    <div class="mybx">
+        <div><img src="imgs/sm01.jpg" /></div>
+        <div><img src="imgs/sm02.jpg" /></div>
+        <div><img src="imgs/sm03.jpg" /></div>
+        <div><img src="imgs/sm04.jpg" /></div>
+        <div><img src="imgs/sm05.jpg" /></div>
+        <div><img src="imgs/sm06.jpg" /></div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

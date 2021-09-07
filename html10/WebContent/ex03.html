@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<style rel="stylesheet" type="text/css">
+    div{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }    
+    
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('button').eq(0).click(function(){
+//        var leng=$('div').queue().length;
+//        for(var i=0; i<leng; i++){
+//            $('div').stop();
+//        }
+        $('div').clearQueue().stop();
+        console.log($('div').queue());
+    });
+    $('button').eq(1).click(function(){
+        $('div').finish();
+    });
+    $('button').eq(2).click(function(){
+        $('div').dequeue();
+    });
+    $('div')
+        .animate({'margin-left':'400px'},3000)//,'easeOutBounce')
+        .animate({'margin-top':'400px','background-color':'blue'},2000)
+        //.delay(3000)
+        .dequeue()
+        .animate({'margin-left':'0px'})
+        .animate({'margin-top':'0px'});
+});    
+    
+</script>
+</head>
+<body>
+<button>stop</button>
+<button>skip</button>
+<button>deq</button>
+<div>box</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

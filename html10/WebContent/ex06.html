@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.bxslider').bxSlider({
+        //randomStart:true,
+        captions:true,
+        onSliderLoad:function(a){console.log('load',a);},
+        onSliderResize:function(a){console.log('resize',a);},
+        onSlideBefore:function(a,b,c){
+            console.log('before',a.html(),b,c);
+            $('#target').html(a.find('img').attr('src'));
+         },
+        onSlideAfter:function(a,b,c){console.log('after',a.html(),b,c);},
+        onSlideNext:function(a,b,c){console.log('next',a.html(),b,c);},
+        onSlidePrev:function(a,b,c){console.log('prev',a.html(),b,c);}
+    });
+});    
+</script>
+</head>
+<body>
+<h1 id="target">src</h1>
+<ul class="bxslider">
+  <li><img src="imgs/big01.jfif"></li>
+  <li><img src="imgs/big02.jfif"></li>
+  <li><img src="imgs/big03.jfif"></li>
+  <li><img src="imgs/big04.jfif"></li>
+  <li><img src="imgs/big05.jfif"></li>
+  <li><img src="imgs/big06.jfif"></li>
+</ul>
+</body>
+</html>

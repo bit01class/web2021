@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>html10</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>ex01</servlet-name>
+  	<servlet-class>kr.co.tjoeun.step1.Ex01</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ex02</servlet-name>
+  	<servlet-class>kr.co.tjoeun.step1.Ex02</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>form1</servlet-name>
+  	<servlet-class>kr.co.tjoeun.step2.Ex04</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>result1</servlet-name>
+  	<servlet-class>kr.co.tjoeun.step2.Ex06</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>finalServlet</servlet-name>
+  	<servlet-class>kr.co.tjoeun.step3.Ex07</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>finalServlet</servlet-name>
+  	<url-pattern>/ex15.html</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>result1</servlet-name>
+  	<url-pattern>/ex14.html</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>form1</servlet-name>
+  	<url-pattern>/ex13.html</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ex01</servlet-name>
+  	<url-pattern>/ex11.html</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ex02</servlet-name>
+  	<url-pattern>/ex12.jsp</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+
+
+
+
+
+

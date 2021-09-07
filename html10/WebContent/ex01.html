@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Title </title>
+<style rel="stylesheet" type="text/css">
+    div{
+        width: 300px;
+        height: 200px;
+        background-color: aqua;
+    }    
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+var callback=function(){
+    console.log('end');
+};    
+    $(document).ready(function(){
+        $('button').click(function(){
+            if($(this).text()=='btn1'){
+                console.log('btn1');
+                $('div').stop().hide(3000);
+//                $('div').slideUp(3000);
+//                $('div').fadeOut(3000);
+//                $('div').fadeTo(3000,0.5);
+                
+            }else if($(this).text()=='btn2'){
+                console.log('btn2');
+                $('div').stop().show(3000);
+//                $('div').slideDown(3000);
+//                $('div').fadeIn(3000);
+//                $('div').fadeTo(3000,1);
+            }else if($(this).text()=='btn3'){
+                console.log('btn3');
+//                $('div').toggle(3000);
+//                $('div').slideToggle(3000);
+                $('div').fadeToggle(3000);
+            }
+        });
+    });
+</script>
+</head>
+<body>
+<button>btn1</button>
+<button>btn2</button>
+<button>btn3</button>
+<div>내용</div>
+</body>
+</html>
+
+
+
+

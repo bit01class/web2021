@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('button').eq(0).click(function(){
+		var id=$('input').val();
+		/* 
+		$.get('ex03.xml?id='+id,function(data,result,xhr){
+			console.log(result,typeof data,data);
+		});
+		 */
+		$.get({
+			url:'ex03.xml?id='+id,
+			success:function(a,b,c){
+				console.log(b,typeof a,a);
+			}
+		});
+	});
+	$('button').eq(1).click(function(){
+		var id=$('input').val();
+		/* 
+		$.post('ex03.xml',"id="+id,function(data,result,xhr){
+			console.log(result,typeof data,data);
+		},'xml');
+		 */
+		$.post({
+			url:'ex03.xml',
+			data:'id='+id,
+			dataType:'xml',
+			success:function(a,b,c){
+				console.log(b,typeof a,a);
+			}
+		});
+	});
+	$('button').eq(2).click(function(){
+		var id=$('input').val();
+		$.ajax({
+			type:'POST',
+			url:'ex033.xml',
+			data:'id='+id,
+			dataType:'xml',
+			error:function(a,b,c){
+				console.log(a,b,c);
+			},
+			success:function(a,b,c){
+				console.log(b,typeof a,a);
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+<input type="text"/>
+<button>get</button>
+<button>post</button>
+<button>ajax</button>
+</body>
+</html>
+
+
+

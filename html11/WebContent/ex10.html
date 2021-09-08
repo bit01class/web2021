@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//var url="http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=109";
+	var url="ex11.xml";
+	$.get(url,function(data){
+		console.log($(data).find('location').attr('wl_ver',"3").find('tmEf'),$(data).find('wf'));
+		$(data).find('location').attr('wl_ver',"3").find('tmEf').each(function(){
+			$('<tr/>')
+				.append('<td>'+$(this).html()+'</td>')
+				.append('<td>'+$(this).next().html()+'</td>')
+			.appendTo('tbody');
+		});
+	});
+});
+</script>
+</head>
+<body>
+<h1>서울날씨</h1>
+<table>
+	<thead>
+		<tr>
+			<th>시간</th>
+			<th>날씨</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
+</body>
+</html>

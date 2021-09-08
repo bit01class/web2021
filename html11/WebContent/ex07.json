@@ -1,0 +1,6 @@
+{"rows":[
+{"empno":1111,"ename":"user1","hiredate":"21/09/08","sal":1000},
+{"empno":2222,"ename":"user2","hiredate":"21/09/08","sal":2000},
+{"empno":3333,"ename":"user3","hiredate":"21/09/08","sal":3000},
+{"empno":4444,"ename":"user4","hiredate":"21/09/08","sal":4000}
+]}

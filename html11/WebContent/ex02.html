@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table{
+	width: 80%;
+	border-collapse: collapse;
+}
+table,th,td{
+	border:1px solid gray;
+}
+table>tbody>tr:nth-child(2n)>td{
+	background-color: darkgray;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		jQuery.get('ex01.xml',function(data,result,xhr){
+			//console.log(1,typeof a,a,$(a));
+			//console.log(2,typeof b,b);
+			//console.log(3,typeof c,c.responseText,c);
+			if(result=='success'){
+				var size=$(data).find('student').length;
+				var cols1=$(data).find('num');
+				var cols2=$(data).find('name');
+				var cols3=$(data).find('kor');
+				var cols4=$(data).find('eng');
+				var cols5=$(data).find('math');
+				var msg="";
+				for(var i=0; i<size; i++){
+					msg+="<tr>";
+					msg+="<td>"+cols1.eq(i).html()+"</td>";
+					msg+="<td>"+cols2.eq(i).html()+"</td>";
+					msg+="<td>"+cols3.eq(i).html()+"</td>";
+					msg+="<td>"+cols4.eq(i).html()+"</td>";
+					msg+="<td>"+cols5.eq(i).html()+"</td>";
+					msg+="</tr>";
+				}
+				$('tbody').html(msg);
+				/* 
+				$(data).find('student').each(function(idx,ele){
+					$('<tr/>')
+						.append('<td>'+$(ele).find('num').html()+'</td>')
+						.append('<td>'+$(ele).find('name').html()+'</td>')
+						.append('<td>'+$(ele).find('kor').html()+'</td>')
+						.append('<td>'+$(ele).find('eng').html()+'</td>')
+						.append('<td>'+$(ele).find('math').html()+'</td>')
+					.appendTo('tbody');	
+					
+					
+					
+					 var msg='<tr>';
+					 msg+='<td>'+$(ele).find('num').html()+'</td>';
+					 msg+='<td>'+$(ele).find('name').html()+'</td>';
+					 msg+='<td>'+$(ele).find('kor').html()+'</td>';
+					 msg+='<td>'+$(ele).find('eng').html()+'</td>';
+					 msg+='<td>'+$(ele).find('math').html()+'</td>';
+					 msg+='</tr>';
+					 $('tbody').append(msg);
+				});
+				 */
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>학생성적 리스트</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>학번</th>
+				<th>이름</th>
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+</body>
+</html>

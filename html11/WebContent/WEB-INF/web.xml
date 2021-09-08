@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>html11</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>ex03</servlet-name>
+  	<servlet-class>kr.co.tjoeun.xml.Ex03</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>empXml</servlet-name>
+  	<servlet-class>kr.co.tjoeun.xml.Ex06</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>empJson</servlet-name>
+  	<servlet-class>kr.co.tjoeun.json.Ex09</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>weatherXml</servlet-name>
+  	<servlet-class>kr.co.tjoeun.xml.Ex11</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>weatherXml</servlet-name>
+  	<url-pattern>/ex11.xml</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>empJson</servlet-name>
+  	<url-pattern>/ex09.json</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>empXml</servlet-name>
+  	<url-pattern>/ex06.xml</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ex03</servlet-name>
+  	<url-pattern>/ex03.xml</url-pattern>
+  </servlet-mapping>
+</web-app>

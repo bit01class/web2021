@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table,th,td{
+	border:1px solid gray;
+}
+table{
+	width: 80%;
+	border-collapse: collapse;
+}
+table>thead>tr>th:nth-child(1){
+	width:10%;
+}
+table>thead>tr>th:last-child{
+	width:15%;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$.get('ex06.xml',function(data,msg){
+
+		$(data).find('row').each(function(idx,ele){
+			$('<tr/>')
+				.append($('<td/>').html($(ele).find('empno').html()))
+				.append($('<td/>').html($(ele).find('ename').html()))
+				.append($('<td/>').html($(ele).find('hiredate').html()))
+				.append($('<td/>').html($(ele).find('sal').html()))
+			.appendTo('tbody');
+		});
+	});
+});
+</script>
+</head>
+<body>
+<h1>emp list</h1>
+<table>
+	<thead>
+		<tr>
+			<th>empno</th>
+			<th>ename</th>
+			<th>hiredate</th>
+			<th>sal</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
+</body>
+</html>

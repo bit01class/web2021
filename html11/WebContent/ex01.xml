@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student>
+		<num>1</num>
+		<name>강길동</name>
+		<kor>91</kor>
+		<eng>81</eng>
+		<math>71</math>
+	</student>
+	<student>
+		<num>2</num>
+		<name>김길동</name>
+		<kor>92</kor>
+		<eng>82</eng>
+		<math>72</math>
+	</student>
+	<student>
+		<num>3</num>
+		<name>박길동</name>
+		<kor>93</kor>
+		<eng>83</eng>
+		<math>73</math>
+	</student>
+	<student>
+		<num>4</num>
+		<name>이길동</name>
+		<kor>94</kor>
+		<eng>84</eng>
+		<math>74</math>
+	</student>
+</students>

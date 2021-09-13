@@ -69,6 +69,60 @@ footer>p:first-child{
 	font-weight: bold;
 	margin-top:10px;
 }
+
+
+#p3{}
+#p3>h2{
+	text-align: center;
+}
+#p3>table{
+	width:500px;
+	border-collapse: collapse;
+	margin:10px auto 100px auto;
+}
+#p3>table,#p3>table th,#p3>table td{
+	border:1px solid gray;
+}
+#p3>a{
+	display: block;
+	width: 100px;
+	height: 50px;
+	color:white;
+	background-color:gray;
+	border-radius: 10px;
+	text-decoration: none;
+	text-align: center;
+	line-height: 50px;
+	font-weight: bold;
+	margin :auto;
+}
+.popup{
+	position: fixed;
+	left:0px;
+	top:122px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+}
+.popup>div{
+	width:400px;
+	margin:50px auto 0px auto;
+	background-color: white;
+	border-radius: 20px;
+	padding: 10px;
+}
+.popup>div>h2,.popup>div>form>div{
+	text-align: center;
+}
+.popup>div>form>div>label{
+	display: inline-block;
+	width: 100px;
+}
+.popup>div>form>div>input{
+	width: 250px;
+}
+
 </style>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="js/jquery.bxslider.js"></script>
@@ -89,6 +143,16 @@ $(document).ready(function(){
 	$('nav a').eq(2).click(function(){
 		deptList();
 		return false;
+	});
+	$('#p3>table+a').click(function(){
+		$(this).next().show();
+		return false;
+	});
+	$('.popup').click(function(){
+		$(this).hide();
+	});
+	$('.popup>div').click(function(e){
+		e.stopPropagation();
 	});
 });
 function xmlList(){
@@ -189,6 +253,28 @@ function index(){
 				</thead>
 				<tbody></tbody>
 			</table>
+			<a href="#">입 력</a>
+			<div class="popup">
+				<div>
+					<h2>입력 페이지</h2>
+					<form action="deptCrud.xml">
+						<div>
+						<label>deptno</label><input type="text" name="deptno" />
+						</div>
+						<div>
+						<label>dname</label><input type="text" name="dname" />
+						</div>
+						<div>
+						<label>loc</label><input type="text" name="loc" />
+						</div>
+						<div>
+						<button>입 력</button>
+						<button type="reset">취 소</button>
+						<button type="button">뒤 로</button>
+						</div>
+					</form>
+				</div>
+			</div>
 			</div>
 		</section>
 		<aside>

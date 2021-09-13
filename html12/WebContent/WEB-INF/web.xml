@@ -8,6 +8,22 @@
   	<servlet-name>DeptXml</servlet-name>
   	<servlet-class>kr.co.tjoeun.xml.DeptXml</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EmpList</servlet-name>
+  	<servlet-class>kr.co.tjoeun.json.EmpList</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmpDetail</servlet-name>
+  	<servlet-class>kr.co.tjoeun.json.EmpOne</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>EmpDetail</servlet-name>
+  	<url-pattern>/empObject.json</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmpList</servlet-name>
+  	<url-pattern>/emp.json</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>DeptXml</servlet-name>
   	<url-pattern>/dept.xml</url-pattern>

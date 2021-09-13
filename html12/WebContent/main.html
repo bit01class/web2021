@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body>div{
+	width:800px;
+	margin:0px auto;
+	background-color: white;
+	position: relative;
+}
+header{
+	
+}
+header>h1{
+	float: left;
+	background-image: url("imgs/logo.gif");
+	width:180px;
+	height: 44px;
+	margin: 10px 0px;
+	text-indent: -9999px;
+}
+header>div{
+	float:right;
+}
+nav{
+	clear: both;
+	background-color: gray;
+	height: 50px;
+}
+nav>ul{
+	padding:0px;
+	list-style: none;
+	width:416px;
+	margin:0px auto;
+}
+nav>ul>li{
+	margin:0px 1px 0px 1px;
+	float: left;
+}
+nav>ul>li>a{
+	display: block;
+	width:98px;
+	height: 50px;
+	border-left:1px white solid;
+	border-right:1px white solid;
+	text-decoration: none;
+	text-align: center;
+	line-height: 50px;
+	color:white;
+}
+section{
+	clear: both;
+}
+aside{
+	position: absolute;
+	left:800px;
+	top:50px;
+}
+footer{
+	background-color: gray;
+	padding-left:300px;
+	background-image: url("imgs/logo.gif");
+	background-repeat: no-repeat;
+	background-position: 100px;
+}
+footer>p:first-child{
+	font-weight: bold;
+	margin-top:10px;
+}	
+#p4>table{
+	border-collapse: collapse;
+	width: 500px;
+	margin: 0px auto;
+}
+#p4>table,#p4>table>thead>tr>th,#p4>table>tbody>tr>td{
+	border:1px solid gray;
+}
+#p4>table>tbody{}
+#p4>table>tbody>tr{}
+#p4>table>tbody>tr>td{
+	height: 35px;
+}
+#p4>table>tbody>tr>td:hover{
+	cursor: pointer;
+}
+.popup{
+	position: fixed;
+	left:0px;
+	top:122px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+}
+.popup>div{
+	width:400px;
+	margin:50px auto 0px auto;
+	background-color: white;
+	border-radius: 20px;
+	padding: 10px;
+}
+.popup>div>h2,.popup>div>form>div{
+	text-align: center;
+}
+.popup>div>form>div>label{
+	display: inline-block;
+	width: 100px;
+}
+.popup>div>form>div>input{
+	width: 250px;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('nav ul>li>a').eq(0).click(function(){
+		$('section>div').hide();
+		$('#p1').show();
+		return false;
+	});
+	$('nav ul>li>a').eq(1).click(function(){
+		$('section>div').hide();
+		$('#p2').show();
+		return false;
+	});
+	$('nav ul>li>a').eq(2).click(function(){
+		$('section>div').hide();
+		$('#p3').show();
+		return false;
+	});
+	$('nav ul>li>a').eq(3).click(function(){
+		$('section>div').hide();
+		getList();
+		$('#p4').show();
+		return false;
+	});
+	$('nav ul>li>a').eq(0).click();
+	$(document).on('click','#p4 table>tbody>tr>td',function(){
+		var empno=$(this).parent().children().first().html();
+		getOne(empno);
+	});
+});
+function getOne(empno){
+	$.getJSON('empObject.json?empno='+empno,function(data){
+		$('.popup input').eq(0).val(data.emp[0].empno);
+		$('.popup input').eq(1).val(data.emp[0].ename);
+		$('.popup input').eq(2).val(data.emp[0].hiredate);
+		$('.popup input').eq(3).val(data.emp[0].sal);
+		$('.popup input').css('border-width','0px');
+		$('.popup').show();
+		$('.popup button').eq(0).one('click',function(){
+			$('.popup input').css('border-width','1px');
+			$('.popup input').eq(1).prop('readonly',false);
+			$('.popup input').eq(3).prop('readonly',false);
+			$(this).next().attr('type','reset');
+			$(this).next().html('취소');
+		});
+	});
+}
+function getList(){
+	$.getJSON('emp.json',function(data){
+		data.emp.forEach(function(ele,idx){
+			$('<tr/>')
+				.append('<td>'+ele.empno+'</td>')
+				.append('<td>'+ele.ename+'</td>')
+				.append('<td>'+ele.hiredate+'</td>')
+				.append('<td>'+ele.sal+'</td>')
+			.appendTo('#p4 table tbody');
+		});
+	});
+}
+</script>
+</head>
+<body>
+	<div>
+		<header>
+			<h1>더조은 교육센터</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="#">HOME</a></li>
+				<li><a href="#">INTRO</a></li>
+				<li><a href="#">DEPT</a></li>
+				<li><a href="#">EMP(json)</a></li>
+			</ul>
+		</nav>
+		<section>
+			<div id="p1">
+			<h2>IT교육 산업 핵심 리더 더조은컴퓨터아카데미와
+대한민국 대표 온라인 고등 교육 메가스터디가 하나가 되었습니다!</h2>
+<p>IT교육의 선두주자 더조은컴퓨터아카데미와 대한민국 대표 온라인 고등 교육 메가스터디가 만나 이전에 없던 새로운 역사를 만들어냅니다.
+더조은컴퓨터아카데미는 다양한 컴퓨터 교육 서비스로 매년 수많은 취준생을 취업의 길로 이끌고 있으며
+메가스터디는 최고의 고등 교육 컨텐츠를 제공하여 수많은 학생의 대학 진학에 힘쓰고 있습니다.</p>
+<p>
+더조은컴퓨터아카데미는 메가스터디와 만나 탄탄한 지식과 체계를 통해 더욱 안정적이고 퀄리티 있는 교육을 제공하여
+수료생 여러분들의 취업과 자기발전을 위해 실무 중심의 커리큘럼에 집중하여 여러분들의 꿈을 이룰 수 있도록 최선을 다합니다.</p>
+<p>
+더조은컴퓨터아카데미는 웹디자인, 편집디자인, 건축, 인테리어디자인, 모바일 및 웹퍼블리셔 과정, 전산세무회계 등
+컴퓨터 분야의 전문화된 교육으로 운영하며 각 교육과정은 10년 이상의 실무경력을 가진 전문강사진으로 구성하여
+실무를 대비한 커리큘럼과 트렌드 및 미래 흐름까지 파악할 수 있는 대한민국 최고의 실무 인재 양성과정으로 인정받고 있습니다.</p>
+<p>
+#더조은컴퓨터아카데미#취업준비#국비지원교육#실무중심교육#포트폴리오#무료교육#컴퓨터학원</p>
+			</div>
+			<div id="p2">
+				<h2>intro page</h2>
+			</div>
+			<div id="p3">
+				<h2>DEPT LIST</h2>
+			</div>
+			<div id="p4">
+				<h2>EMP LIST</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>empno</th>
+							<th>ename</th>
+							<th>hiredate</th>
+							<th>sal</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+				<div class="popup">
+				<div>
+					<h2>상세 페이지</h2>
+					<form action="#">
+						<div>
+						<label>empno</label><input type="text" name="empno" readonly/>
+						</div>
+						<div>
+						<label>ename</label><input type="text" name="ename" readonly/>
+						</div>
+						<div>
+						<label>hiredate</label><input type="text" name="hiredate" disabled/>
+						</div>
+						<div>
+						<label>sal</label><input type="text" name="sal" readonly/>
+						</div>
+						<div>
+						<button type="button">수 정</button>
+						<button type="button">삭 제</button>
+						<button type="button">뒤 로</button>
+						</div>
+					</form>
+				</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+		<p>더조은컴퓨터아카데미</p>
+		<p>대표번호1588.8748</p>
+		<p>copy; THEJOEUN ACADEMY Corp.</p>
+		</footer>
+	</div>
+</body>
+</html>

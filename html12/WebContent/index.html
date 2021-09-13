@@ -86,7 +86,29 @@ $(document).ready(function(){
 		intro();
 		return false;
 	});
+	$('nav a').eq(2).click(function(){
+		deptList();
+		return false;
+	});
 });
+function xmlList(){
+	$('#p3>table>tbody').empty();
+	$.get('dept.xml',function(data){
+		$(data).find('dept').each(function(){
+			var ele=$('<tr/>')
+				.append('<td>'+$(this).find('deptno').html()+'</td>')
+				.append('<td>'+$(this).find('dname').html()+'</td>')
+				.append('<td>'+$(this).find('loc').html()+'</td>')
+			.appendTo('#p3>table>tbody');
+		});
+	},'xml');
+}
+
+function deptList(){
+	$('section>div').hide();
+	xmlList();
+	$('section>div').eq(2).fadeIn(3000);
+}
 
 function intro(){
 	$('section>div').hide();
@@ -155,7 +177,7 @@ function index(){
 <p>
 #더조은컴퓨터아카데미#취업준비#국비지원교육#실무중심교육#포트폴리오#무료교육#컴퓨터학원</p>
 			</div>
-			<div id="#p3">
+			<div id="p3">
 			<h2>DEPT list(xml)</h2>
 			<table>
 				<thead>

@@ -154,7 +154,24 @@ $(document).ready(function(){
 	$('.popup>div').click(function(e){
 		e.stopPropagation();
 	});
+	$('#p3>.popup form').submit(function(){
+		addXml();
+		return false;
+	});
 });
+function addXml(){
+	var param=$('#p3>.popup form').serialize();
+	$.post('dept.xml',param,function(){
+		//xmlList();
+		$("<tr/>")
+			.append('<td>'+$('#p3>.popup form input').eq(0).val()+'</td>')
+			.append('<td>'+$('#p3>.popup form input').eq(1).val()+'</td>')
+			.append('<td>'+$('#p3>.popup form input').eq(2).val()+'</td>')
+		.appendTo('#p3>table>tbody');
+		$('.popup').click();
+	});
+}
+
 function xmlList(){
 	$('#p3>table>tbody').empty();
 	$.get('dept.xml',function(data){

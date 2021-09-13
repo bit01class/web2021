@@ -15,6 +15,32 @@ import javax.servlet.http.HttpServletResponse;
 import kr.co.tjoeun.util.MyOracle;
 
 public class DeptXml extends HttpServlet {
+	Connection conn;
+	Statement stmt;
+	ResultSet rs;
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		int deptno=Integer.parseInt(req.getParameter("deptno"));
+		String dname=req.getParameter("dname");
+		String loc=req.getParameter("loc");
+		String sql="insert into dept12 values ("+deptno+",'"+dname+"','"+loc+"')";
+		try {
+			conn=MyOracle.getConnection();
+			stmt=conn.createStatement();
+			stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(stmt!=null)stmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,9 +50,6 @@ public class DeptXml extends HttpServlet {
 		
 		out.println("<root>");
 		String sql="select * from dept12 order by deptno";
-		Connection conn=null;
-		Statement stmt=null;
-		ResultSet rs=null;
 		try {
 			conn=MyOracle.getConnection();
 			stmt=conn.createStatement();

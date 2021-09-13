@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body>div{
+	width:800px;
+	margin:0px auto;
+	background-color: white;
+	position: relative;
+}
+header{
+	
+}
+header>h1{
+	float: left;
+	background-image: url("imgs/logo.gif");
+	width:180px;
+	height: 44px;
+	margin: 10px 0px;
+	text-indent: -9999px;
+}
+header>div{
+	float:right;
+}
+nav{
+	clear: both;
+	background-color: gray;
+	height: 50px;
+}
+nav>ul{
+	padding:0px;
+	list-style: none;
+	width:416px;
+	margin:0px auto;
+}
+nav>ul>li{
+	margin:0px 1px 0px 1px;
+	float: left;
+}
+nav>ul>li>a{
+	display: block;
+	width:98px;
+	height: 50px;
+	border-left:1px white solid;
+	border-right:1px white solid;
+	text-decoration: none;
+	text-align: center;
+	line-height: 50px;
+	color:white;
+}
+section{
+	clear: both;
+}
+aside{
+	position: absolute;
+	left:800px;
+	top:50px;
+}
+footer{
+	background-color: gray;
+	padding-left:300px;
+	background-image: url("imgs/logo.gif");
+	background-repeat: no-repeat;
+	background-position: 100px;
+}
+footer>p:first-child{
+	font-weight: bold;
+	margin-top:10px;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	index();
+});
+
+function index(){
+	$('#bxslider').bxSlider({
+		
+	});
+}
+</script>
+</head>
+<body>
+	<div>
+		<header>
+		<h1>더조은교육센터</h1>
+		<div>
+			<form action="login" method="post">
+				<label>deptno</label><input type="text" name="deptno"/>
+				<label>dname</label><input type="text" name="dname"/>
+				<button>로그인</button>
+			</form>
+		</div>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="#">HOME</a></li>
+				<li><a href="#">INTRO</a></li>
+				<li><a href="#">DEPT</a></li>
+				<li><a href="#">EMP</a></li>
+			</ul>
+		</nav>
+		<section>
+			<div id="bxslider">
+				<div><img src="imgs/sm01.jpg"/></div>
+				<div><img src="imgs/sm02.jpg"/></div>
+				<div><img src="imgs/sm03.jpg"/></div>
+				<div><img src="imgs/sm04.jpg"/></div>
+				<div><img src="imgs/sm05.jpg"/></div>
+				<div><img src="imgs/sm06.jpg"/></div>
+			</div>
+		</section>
+		<aside>
+			<a href="http://tjoeun.co.kr">더조은</a>
+			<a href="https://google.com">google</a>
+			<a href="https://daum.net">daum</a>
+		</aside>
+		<footer>
+		<p>더조은컴퓨터아카데미</p>
+		<p>대표번호1588.8748</p>
+		<p>copy; THEJOEUN ACADEMY Corp.</p>
+		</footer>
+	</div>
+</body>
+</html>

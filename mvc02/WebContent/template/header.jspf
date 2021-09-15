@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<link rel="stylesheet" type="text/css" href="<%=request.getAttribute("path") %>css/grid2.css" />
+<style type="text/css">
+	#header h1{
+		background-image: url("<%=request.getAttribute("path") %>imgs/logo.gif");
+		width:180px;
+		height:44px;
+		text-indent: -9999px;
+	}
+	#navi>div{
+		background-color: gray;
+	}
+	#navi .grid2{
+		height:30px;
+	}
+	#navi a{
+		display: block;
+		height:30px;
+		text-align: center;
+		color: white;
+		text-decoration: none;
+		border-top:5px darkgray solid;
+		margin:0px 5px;
+	}
+	
+	#navi a:hover{
+		border-top:5px yellow solid;
+	}
+	#footer{
+		background-color: gray;
+		overflow: hidden;
+	}
+</style>
+<script type="text/javascript" src="<%=request.getAttribute("path") %>js/jquery-1.12.4.js"></script>

@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+	<div class="container">
+		<div class="row" id="header">
+			<div class="grid12">
+				<h1>더조은 교육센터</h1>
+			</div>
+		</div>
+		<div class="row" id="navi">
+			<div class="grid2">&nbsp;</div>
+			<div class="grid2"><a href="<%=request.getAttribute("path") %>index.do">HOME</a></div>
+			<div class="grid2"><a href="<%=request.getAttribute("path") %>emp/list.do">EMP</a></div>
+			<div class="grid2"><a href="<%=request.getAttribute("path") %>dept/list.do">DEPT</a></div>
+			<div class="grid2"><a href="<%=request.getAttribute("path") %>login/form.do">LOGIN</a></div>
+			<div class="grid2">&nbsp;</div>
+		</div>
+		<div class="row">
+			<div class="grid12" id="content">
+<!-- content start -->

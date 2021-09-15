@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!-- content end -->			
+			</div>
+		</div>
+		<div class="row" id="footer">
+			<div class="grid4">&nbsp;</div>
+			<div class="grid4">
+			<p>더조은컴퓨터아카데미</p>
+			<p>대표번호1588.8748</p>
+			<p>&copy; THEJOEUN ACADEMY Corp.</p>
+			</div>
+			<div class="grid4">&nbsp;</div>
+		</div>
+	</div>

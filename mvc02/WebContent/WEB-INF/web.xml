@@ -28,7 +28,31 @@
   		<param-value>../</param-value>
   	</init-param>
   </servlet>
+  <servlet>
+  	<servlet-name>empDetail</servlet-name>
+  	<servlet-class>kr.co.tjoeun.controller.EmpOneController</servlet-class>
+  	<init-param>
+  		<param-name>path</param-name>
+  		<param-value>../</param-value>
+  	</init-param>
+  </servlet>
+  <servlet>
+  	<servlet-name>empEdit</servlet-name>
+  	<servlet-class>kr.co.tjoeun.controller.EmpEditController</servlet-class>
+  	<init-param>
+  		<param-name>path</param-name>
+  		<param-value>../</param-value>
+  	</init-param>
+  </servlet>
   
+  <servlet-mapping>
+  	<servlet-name>empEdit</servlet-name>
+  	<url-pattern>/emp/edit.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>empDetail</servlet-name>
+  	<url-pattern>/emp/detail.do</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>empInsert</servlet-name>
   	<url-pattern>/emp/add.do</url-pattern>
